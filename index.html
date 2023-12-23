@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Suitmedia</title>
+  </head>
+  <body>
+    <div class="navbar" id="myNavbar">
+      <div class="logo-container">
+        <img src="asset/img/logo.png" alt="Logo" class="logo" />
+      </div>
+      <div class="menu-container">
+        <a href="#">Work</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#" class="active">Ideas</a>
+        <a href="#">Carrers</a>
+        <a href="#">Contact</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <div class="parallax-container">
+      <div class="parallax-image"></div>
+      <div class="parallax-content">
+        <h1>Ideas</h1>
+        <p>Where all our great things begin</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <div class="list-posts">
+        <div class="list-header">
+          <div class="pagination-info">Showing 1-10 of 100</div>
+          <div class="sort-and-per-page">
+            <label for="sort">Sort by:</label>
+            <select id="sort" onchange="handleSortChange()">
+              <option value="published_at">Terbaru</option>
+              <option value="-published_at">Terlama</option>
+            </select>
+
+            <label for="showPerPage">Show per page:</label>
+            <select id="showPerPage" onchange="handleShowPerPageChange()">
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="content-cards">
+          <div class="card-row">
+            <div class="card">
+              <img
+                src="asset/img/banner.jpg"
+                class="lazyload"
+                alt="Thumbnail 1"
+              />
+              <div class="card-content">
+                <h2>Title Post 1</h2>
+                <p>Deskripsi singkat konten.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="asset/img/banner.jpg"
+                class="lazyload"
+                alt="Thumbnail 2"
+              />
+              <div class="card-content">
+                <h2>
+                  Title Post 2
+                </h2>
+                <p>Deskripsi singkat konten.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="asset/img/banner.jpg"
+                class="lazyload"
+                alt="Thumbnail 3"
+              />
+              <div class="card-content">
+                <h2>Title Post 3</h2>
+                <p>Deskripsi singkat konten.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="asset/img/banner.jpg"
+                class="lazyload"
+                alt="Thumbnail 4"
+              />
+              <div class="card-content">
+                <h2>Title Post 4</h2>
+                <p>Deskripsi singkat konten.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="asset/img/banner.jpg"
+                class="lazyload"
+                alt="Thumbnail 5"
+              />
+              <div class="card-content">
+                <h2>Title Post 5</h2>
+                <p>Deskripsi singkat konten.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="asset/img/banner.jpg"
+                class="lazyload"
+                alt="Thumbnail 6"
+              />
+              <div class="card-content">
+                <h2>
+                  Title Post 6
+                </h2>
+                <p>Deskripsi singkat konten.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="asset/img/banner.jpg"
+                class="lazyload"
+                alt="Thumbnail 7"
+              />
+              <div class="card-content">
+                <h2>Title Post 7</h2>
+                <p>Deskripsi singkat konten.</p>
+              </div>
+            </div>
+
+            <div class="card">
+              <img
+                src="asset/img/banner.jpg"
+                class="lazyload"
+                alt="Thumbnail 8"
+              />
+              <div class="card-content">
+                <h2>Title Post 8</h2>
+                <p>Deskripsi singkat konten.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pagination">
+          <button onclick="prevPage()">Previous</button>
+          <span id="currentPage">1</span>
+          <button onclick="nextPage()">Next</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

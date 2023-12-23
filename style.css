@@ -1,0 +1,266 @@
+body {
+  font-family: "Arial", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(
+    255,
+    115,
+    0
+  ); /* Warna background orange tanpa transparansi */
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  transition: top 0.3s ease, background-color 0.3s ease; /* Transisi top dan warna latar belakang */
+  z-index: 1000; /* Tingkat tumpukan yang tinggi agar navbar ada di atas */
+}
+
+.logo-container {
+  flex: 1;
+  margin-right: 10px; /* Jarak ke kanan dari logo */
+  padding: 10px 80px;
+}
+
+.menu-container {
+  display: flex;
+  margin-left: 10px; /* Jarak ke kiri dari menu */
+  padding: 10px 100px;
+}
+
+.navbar a {
+  color: #ffffff; /* Warna teks putih */
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: transparent; /* Tidak ada background untuk menu */
+  border-bottom: 2px solid transparent; /* Garis bawah transparan */
+}
+
+.navbar a:hover {
+  background-color: #ffffff; /* Warna latar belakang putih saat hover */
+  color: #333; /* Warna teks hitam saat hover */
+}
+
+.navbar a.active {
+  background-color: transparent; /* Hapus background saat aktif */
+  border-bottom: 2px solid #ffffff; /* Garis bawah putih saat aktif */
+  color: #ffffff; /* Warna teks putih saat aktif */
+}
+
+.logo {
+  display: inline-block;
+  width: 100px; /* Sesuaikan ukuran sesuai kebutuhan */
+  height: 40px; /* Sesuaikan ukuran sesuai kebutuhan */
+
+  background-size: contain; /* Sesuaikan sesuai kebutuhan */
+}
+
+.navbar .icon {
+  display: none;
+}
+
+.content {
+  margin-top: 20px; /* Sesuaikan margin top untuk menghindari tumpang tindih dengan header */
+  padding: 20px;
+  position: relative; /* Tambahkan properti posisi relatif */
+}
+
+@media screen and (max-width: 600px) {
+  .navbar a:not(:first-child) {
+    display: none;
+  }
+
+  .navbar .menu-container {
+    display: none;
+  }
+
+  .navbar a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar.responsive {
+    position: relative;
+  }
+
+  .navbar.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+  .navbar.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+/* Tambahkan gaya untuk header transparan saat scroll ke atas */
+.navbar.transparent {
+  background-color: rgba(
+    255,
+    115,
+    0,
+    0.782
+  ); /* Warna background orange dengan opacity 0.7 saat scroll ke atas */
+}
+
+.parallax-container {
+  position: relative;
+  height: 75vh;
+  width: 100%;
+  overflow: hidden;
+  margin-top: -70px;
+  z-index: 1;
+}
+
+.parallax-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("asset/img/banner.jpg") center/cover no-repeat; /* Sesuaikan dengan path gambar Anda */
+  z-index: -1;
+  transform: skewY(-5deg);
+  transform-origin: bottom left;
+}
+
+.parallax-image {
+  background-image: url("asset/img/banner.jpg"); /* Ganti dengan path ke gambar banner Anda */
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform: skewY(-5deg); /* Miringkan area bawah */
+}
+
+.parallax-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+}
+
+.list-posts {
+  margin-top: 20px;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0 170px;
+}
+
+.list-header label {
+  margin-right: 10px;  
+}
+
+.post-card {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.post-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.post-card h3 {
+  margin-top: 10px;
+  max-height: 3em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px; /* Sesuaikan jarak atas sesuai kebutuhan */
+}
+
+.pagination button {
+  margin: 0 5px;
+}
+
+/* Tambahan CSS untuk card konten */
+.content-cards {
+  margin-top: 20px;
+  padding: 0 170px; /* Menambahkan padding di ujung kiri dan kanan */
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.card {
+  position: relative;
+  width: calc(
+    25% - 10px
+  ); /* 25% untuk 4 card dalam satu baris dengan sedikit margin */
+  overflow: hidden;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Menambahkan efek bayangan */
+  border-radius: 5px; /* Menambahkan sudut lengkung pada card */
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 5px; /* Menambahkan sudut lengkung pada gambar */
+}
+
+.card-content {
+  position: relative;
+  z-index: 2; /* Memastikan konten card di atas lapisan bayangan */
+  padding: 10px;
+}
+
+.card-content h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-content p {
+  font-size: 1em;
+  line-height: 1.4;
+}
